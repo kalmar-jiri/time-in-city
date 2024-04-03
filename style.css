@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: hsl(0, 0%, 25%);
+  background: linear-gradient(
+    to left,
+    hsl(0, 0%, 15%),
+    hsla(120, 100%, 14%, 0.9)
+  );
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+h1 {
+  color: rgb(157, 255, 0);
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.window {
+  background: linear-gradient(135deg, hsl(0, 0%, 5%), hsl(0, 0%, 20%));
+  padding: 60px;
+  border-radius: 40px;
+  /* box-shadow: 10px 10px 30px rgb(0, 255, 255); */
+  box-shadow: 10px 10px 30px rgb(0, 255, 85);
+}
+
+#city {
+  border: none;
+  width: 400px;
+  height: 100px;
+  border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  background-color: rgb(31, 54, 39);
+  color: rgb(171, 255, 171);
+  border-radius: 5px;
+}
+
+button {
+  width: 200px;
+  height: 101px;
+  border: none;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 6px;
+  /* background-color: rgb(0, 255, 255); */
+  background-color: rgb(0, 255, 85);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Merriweather Sans', sans-serif;
+  border-radius: 5px;
+  position: relative;
+  top: 3px;
+}
+
+button:hover {
+  background-color: rgb(166, 255, 0);
+  transition: 0.25s;
+}
+
+button:active {
+  background-color: rgb(251, 255, 0);
+  transform: translateY(-3px);
+  transition: 0s;
+}
+
+img {
+  width: 55px;
+  position: relative;
+  top: 5px;
+  right: 3px;
+  opacity: 60%;
+}
+
+.answer {
+  margin: auto;
+  width: 67%;
+  padding: 50px;
+  font-size: 7rem;
+  font-weight: 900;
+  background: linear-gradient(to right, yellow, lime);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  top: 1rem;
+  /* right: 2rem; */
+  font-family: 'Merriweather Sans', sans-serif;
+  letter-spacing: 12px;
+}
+
+.hidden {
+  visibility: hidden;
+}
