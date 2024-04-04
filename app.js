@@ -42,6 +42,9 @@ const findTime = () => {
 
 cityInputElement.addEventListener('click', () => {
   cityInputElement.value = '';
+  windowElement.style.height = '260px';
+  answerElement.style.display = 'none';
+  windowElement.style.boxShadow = '5px 5px 40px black';
 });
 
 findBtn.addEventListener('click', findTime);
@@ -49,10 +52,4 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     findTime();
   }
-});
-
-windowElement.addEventListener('click', () => {
-  windowElement.style.height = '260px';
-  answerElement.style.display = 'none';
-  windowElement.style.boxShadow = '5px 5px 40px black';
 });
