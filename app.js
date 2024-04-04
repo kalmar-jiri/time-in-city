@@ -1,6 +1,8 @@
 const cityInputElement = document.querySelector('#city');
 const findBtn = document.querySelector('button');
 const answerElement = document.querySelector('.answer');
+const windowElement = document.querySelector('.window');
+const bodyElement = document.querySelector('body');
 
 const xhr = new XMLHttpRequest();
 const url = 'https://api.api-ninjas.com/v1/worldtime?city=';
@@ -8,6 +10,9 @@ const apiKey = API_KEY;
 
 const findTime = () => {
   const city = cityInputElement.value;
+
+  if (!city) return;
+
   xhr.open('GET', `${url}${city}`);
   xhr.responseType = 'json';
   xhr.setRequestHeader('X-Api-Key', apiKey);
@@ -21,18 +26,33 @@ const findTime = () => {
       timeArr.pop();
       // 13:02
       const time = timeArr.join(':');
+      windowElement.style.height = '490px';
+      answerElement.style.display = 'block';
       answerElement.textContent = time;
-      answerElement.classList.remove('hidden');
     } else {
-      answerElement.textContent = `Request failed. Status: ${xhr.status}`;
+      answerElement.textContent = 'ERROR!';
+      windowElement.style.height = '490px';
+      answerElement.style.display = 'block';
+      answerElement.style.fontSize = '5rem';
+      windowElement.style.boxShadow = '5px 5px 40px red';
     }
   };
   xhr.send();
 };
+
+cityInputElement.addEventListener('click', () => {
+  cityInputElement.value = '';
+});
 
 findBtn.addEventListener('click', findTime);
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     findTime();
   }
+});
+
+windowElement.addEventListener('click', () => {
+  windowElement.style.height = '260px';
+  answerElement.style.display = 'none';
+  windowElement.style.boxShadow = '5px 5px 40px black';
 });
