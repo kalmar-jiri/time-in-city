@@ -2,11 +2,11 @@ const cityInputElement = document.querySelector('#city');
 const findBtn = document.querySelector('button');
 const answerElement = document.querySelector('.answer');
 const windowElement = document.querySelector('.window');
-const bodyElement = document.querySelector('body');
 
 const xhr = new XMLHttpRequest();
 const url = 'https://api.api-ninjas.com/v1/worldtime?city=';
-const apiKey = API_KEY;
+// const apiKey = API_KEY;
+const apiKey = 'mLi0OSo1TCPjnlYIYYSVWA==ajTb8XcXZ04HThy6';
 
 const findTime = () => {
   const city = cityInputElement.value;
